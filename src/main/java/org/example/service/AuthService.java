@@ -32,8 +32,6 @@ public class AuthService {
             System.out.println("You not allowed.MF");
             return;
         }
-
-        ComponentContainer.currentProfile = profile;
         if (profile.getRole().equals(ProfileRole.ADMIN)) {
             AdminController adminController = new AdminController();
             adminController.start();
