@@ -13,8 +13,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class InitDataBase {
-private static ProfileRepository profileRepository;
-private static CardRepository cardRepository;
+private static ProfileRepository profileRepository = new ProfileRepository();
+private static CardRepository cardRepository = new CardRepository();
     public static void adminInit() {
 
         Profile profile = new Profile();
@@ -53,11 +53,5 @@ private static CardRepository cardRepository;
         cardRepository.save(card);
     }
 
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
-    }
 
-    public void setCardRepository(CardRepository cardRepository) {
-        this.cardRepository = cardRepository;
-    }
 }

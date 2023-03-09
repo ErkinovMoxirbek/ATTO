@@ -21,8 +21,8 @@ public class AdminController {
     private ProfileService profileService ;
     private TerminalService terminalService ;
     private CardService cardService;
-    private TransactionRepository transactionRepository;
-    private CardRepository  cardRepository;
+    private TransactionRepository transactionRepository = new TransactionRepository();
+    private CardRepository  cardRepository = new CardRepository();
 
     public void start() {
         boolean b = true;
@@ -354,11 +354,6 @@ public class AdminController {
         this.cardService = cardService;
     }
 
-    public void setTransactionRepository(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
-    }
 
-    public void setCardRepository(CardRepository cardRepository) {
-        this.cardRepository = cardRepository;
-    }
+
 }

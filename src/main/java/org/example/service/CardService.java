@@ -13,9 +13,6 @@ import java.util.List;
 
 public class CardService {
     private TransactionService transactionService ;
-    private TerminalService terminalService ;
-
-    private ProfileService profileService ;
     private CardRepository cardRepository;
 
     public void addCardToProfile(String phone, String cardNum) {
@@ -176,15 +173,9 @@ public class CardService {
         this.transactionService = transactionService;
     }
 
-    public void setTerminalService(TerminalService terminalService) {
-        this.terminalService = terminalService;
-    }
-
-    public void setProfileService(ProfileService profileService) {
-        this.profileService = profileService;
-    }
 
     public void setCardRepository(CardRepository cardRepository) {
         this.cardRepository = cardRepository;
     }
+
 }

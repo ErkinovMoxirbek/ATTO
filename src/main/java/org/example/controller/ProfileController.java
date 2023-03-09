@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class ProfileController {
     private CardService cardService ;
-    private Profile profile;
 
     public void start() {
         boolean b = true;
@@ -71,11 +70,13 @@ public class ProfileController {
 
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
+        Profile profile = new Profile();
         cardService.addCardToProfile(profile.getPhone(), cardNumber);
     }
 
     private void cardList( ) {
         System.out.print("--- Card List ---");
+        Profile profile = new Profile();
         cardService.profileCardList(profile.getPhone());
     }
 
@@ -84,6 +85,7 @@ public class ProfileController {
 
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
+        Profile profile  = new Profile();
         cardService.userChangeCardStatus(profile.getPhone(), cardNumber);
     }
 
@@ -91,6 +93,7 @@ public class ProfileController {
         System.out.print("Enter card number: ");
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
+        Profile profile = new Profile();
         cardService.userDeleteCard(profile.getPhone(), cardNumber);
     }
 
@@ -101,6 +104,7 @@ public class ProfileController {
 
         System.out.print("Enter amount: ");
         Double amount = scanner.nextDouble();
+        Profile profile  = new Profile();
         cardService.userRefillCard(profile.getPhone(), cardNumber, amount);
     }
 
@@ -120,7 +124,4 @@ public class ProfileController {
         this.cardService = cardService;
     }
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
 }
