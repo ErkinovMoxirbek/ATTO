@@ -10,7 +10,7 @@ public class Main {
 
 
         InitDataBase.adminInit();
-        InitDataBase.addCompanyCard();
+        ///InitDataBase.addCompanyCard();
 
 //        AuthController authController = new AuthController();
 //        authController.start();
