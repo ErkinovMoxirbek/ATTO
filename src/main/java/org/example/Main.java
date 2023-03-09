@@ -12,8 +12,8 @@ public class Main {
         InitDataBase.adminInit();
         ///InitDataBase.addCompanyCard();
 
-//        AuthController authController = new AuthController();
-//        authController.start();
+        AuthController authController = new AuthController();
+        authController.start();
 //        DataBase.initTable();
 
     }
