@@ -23,6 +23,7 @@
         <property name="profileService" ref="profileService"/>
         <property name="terminalService" ref="terminalService"/>
         <property name="cardService" ref="cardService"/>
+        <property name="transactionRepository" ref="transactionRepository"/>
     </bean>
     <bean name="cardService" class="org.example.service.CardService">
         <property name="terminalService" ref="terminalService"/>
