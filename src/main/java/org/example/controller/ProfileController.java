@@ -2,7 +2,6 @@ package org.example.controller;
 
 
 
-import org.example.container.ComponentContainer;
 import org.example.dto.Profile;
 import org.example.service.CardService;
 import org.example.util.ScannerUtil;
@@ -10,7 +9,8 @@ import org.example.util.ScannerUtil;
 import java.util.Scanner;
 
 public class ProfileController {
-    private CardService cardService = new CardService();
+    private CardService cardService ;
+    private Profile profile;
 
     public void start() {
         boolean b = true;
@@ -71,13 +71,11 @@ public class ProfileController {
 
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
-        Profile profile = ComponentContainer.currentProfile;
         cardService.addCardToProfile(profile.getPhone(), cardNumber);
     }
 
     private void cardList( ) {
         System.out.print("--- Card List ---");
-        Profile profile = ComponentContainer.currentProfile;
         cardService.profileCardList(profile.getPhone());
     }
 
@@ -86,7 +84,6 @@ public class ProfileController {
 
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
-        Profile profile = ComponentContainer.currentProfile;
         cardService.userChangeCardStatus(profile.getPhone(), cardNumber);
     }
 
@@ -94,8 +91,6 @@ public class ProfileController {
         System.out.print("Enter card number: ");
         Scanner scanner = new Scanner(System.in);
         String cardNumber = scanner.nextLine();
-
-        Profile profile = ComponentContainer.currentProfile;
         cardService.userDeleteCard(profile.getPhone(), cardNumber);
     }
 
@@ -106,7 +101,6 @@ public class ProfileController {
 
         System.out.print("Enter amount: ");
         Double amount = scanner.nextDouble();
-        Profile profile = ComponentContainer.currentProfile;
         cardService.userRefillCard(profile.getPhone(), cardNumber, amount);
     }
 
@@ -122,5 +116,11 @@ public class ProfileController {
 
     }
 
+    public void setCardService(CardService cardService) {
+        this.cardService = cardService;
+    }
 
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
 }

@@ -1,11 +1,9 @@
 package org.example.controller;
 
-import org.example.container.ComponentContainer;
 import org.example.dto.Profile;
 import org.example.service.AuthService;
 import org.example.util.ScannerUtil;
 
-import java.lang.ref.PhantomReference;
 import java.util.Scanner;
 
 public class AuthController {
@@ -45,8 +43,8 @@ public class AuthController {
         System.out.print("Enter pswd:");
         String password = scanner.next();
 
-        AuthService profileService = ComponentContainer.authService;
-        profileService.login(phone, password);
+        
+        authService.login(phone, password);
     }
 
     private void registration() {
