@@ -14,7 +14,7 @@ public class Main {
 
         AuthController authController = new AuthController();
         authController.start();
-//        DataBase.initTable();
+        DataBase.initTable();
 
     }
 }
