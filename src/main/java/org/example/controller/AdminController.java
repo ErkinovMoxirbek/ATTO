@@ -10,19 +10,23 @@ import org.example.service.CardService;
 import org.example.service.ProfileService;
 import org.example.service.TerminalService;
 import org.example.util.ScannerUtil;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
-
+@Component
 public class AdminController {
     //    private CardService cardService = new CardService();
     private ProfileService profileService ;
     private TerminalService terminalService ;
     private CardService cardService;
-    private TransactionRepository transactionRepository = new TransactionRepository();
-    private CardRepository  cardRepository = new CardRepository();
+    private TransactionRepository transactionRepository ;
+    private CardRepository  cardRepository ;
+
+    public AdminController() {
+    }
 
     public void start() {
         boolean b = true;
@@ -341,19 +345,5 @@ public class AdminController {
         }
         transactionList.forEach(System.out::println);
     }
-
-    public void setProfileService(ProfileService profileService) {
-        this.profileService = profileService;
-    }
-
-    public void setTerminalService(TerminalService terminalService) {
-        this.terminalService = terminalService;
-    }
-
-    public void setCardService(CardService cardService) {
-        this.cardService = cardService;
-    }
-
-
 
 }

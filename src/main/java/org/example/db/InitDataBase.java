@@ -13,9 +13,14 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class InitDataBase {
-private static ProfileRepository profileRepository = new ProfileRepository();
-private static CardRepository cardRepository = new CardRepository();
-    public static void adminInit() {
+
+private  ProfileRepository profileRepository ;
+private  CardRepository cardRepository ;
+
+    public InitDataBase() {
+    }
+
+    public  void adminInit() {
 
         Profile profile = new Profile();
         profile.setName("Admin");
@@ -35,7 +40,7 @@ private static CardRepository cardRepository = new CardRepository();
         profileRepository.saveProfile(profile);
     }
 
-    public static void addCompanyCard() {
+    public void addCompanyCard() {
         Card card = new Card();
         card.setCardNumber("5555");
         card.setExpDate(LocalDate.of(2025, 12, 01));

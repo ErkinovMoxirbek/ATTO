@@ -8,18 +8,29 @@ import org.example.enums.GeneralStatus;
 import org.example.enums.ProfileRole;
 import org.example.repository.ProfileRepository;
 import org.example.util.MD5Util;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-
+@Service
 public class AuthService {
 
-
+    @Autowired
     private ProfileRepository profileRepository = new ProfileRepository();
+    @Autowired
     private ProfileController profileController;
+    @Autowired
     private AdminController adminController;
     public AuthService() {
-
     }
+    public AuthService(ProfileRepository profileRepository, ProfileController profileController, AdminController adminController) {
+        this.profileRepository = profileRepository;
+        this.profileController = profileController;
+        this.adminController = adminController;
+    }
+
+
 
     public void login(String phone, String password) {
 
@@ -64,11 +75,5 @@ public class AuthService {
 
     }
 
-    public void setAdminController(AdminController adminController) {
-        this.adminController = adminController;
-    }
 
-    public void setProfileController(ProfileController profileController) {
-        this.profileController = profileController;
-    }
 }

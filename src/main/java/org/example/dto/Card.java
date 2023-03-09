@@ -2,12 +2,15 @@ package org.example.dto;
 
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.example.enums.GeneralStatus;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Card {
+
     private Integer id;
     private String cardNumber;
     private LocalDate expDate;

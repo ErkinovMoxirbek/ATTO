@@ -4,13 +4,16 @@ package org.example.service;
 import org.example.dto.Terminal;
 import org.example.enums.GeneralStatus;
 import org.example.repository.TerminalRepository;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Component
 public class TerminalService {
+    public TerminalService() {
+    }
 
-private TerminalRepository terminalRepository;
+    private TerminalRepository terminalRepository;
     public void addTerminal(Terminal terminal) {
 
         Terminal exist = terminalRepository.getTerminalByCode(terminal.getCode());
@@ -65,7 +68,4 @@ private TerminalRepository terminalRepository;
         terminalRepository.deleteTerminal(code);
     }
 
-    public void setTerminalRepository(TerminalRepository terminalRepository) {
-        this.terminalRepository = terminalRepository;
-    }
 }

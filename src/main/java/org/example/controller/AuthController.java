@@ -3,11 +3,22 @@ package org.example.controller;
 import org.example.dto.Profile;
 import org.example.service.AuthService;
 import org.example.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
-
+@Controller
 public class AuthController {
+    @Autowired
     private AuthService authService;
+    public AuthController() {
+    }
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
     public void start() {
         boolean game = true;
         while (game) {
@@ -68,12 +79,9 @@ public class AuthController {
         profile.setPhone(phone);
         profile.setPassword(password);
 
-
-        AuthService authService = new AuthService();
         authService.registration(profile);
     }
-
-    public void setAuthService(AuthService authService) {
-        this.authService = authService;
+    public void init(){
+        System.out.println("AuthController after initializer.");
     }
 }

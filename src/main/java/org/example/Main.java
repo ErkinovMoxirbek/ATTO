@@ -14,6 +14,7 @@ public class Main {
 //
 //        InitDataBase.adminInit();
 //       InitDataBase.addCompanyCard();
+        
         ApplicationContext context = new  ClassPathXmlApplicationContext("spring-config.xml");
         AuthController authController = (AuthController) context.getBean("authController");
         authController.start();
