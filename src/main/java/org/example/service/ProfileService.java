@@ -4,16 +4,15 @@ package org.example.service;
 import org.example.dto.Profile;
 import org.example.enums.GeneralStatus;
 import org.example.repository.ProfileRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Component
+@Service
 public class ProfileService {
-    public ProfileService() {
-    }
-
+    @Autowired
     private ProfileRepository profileRepository;
-    private CardService cardService;
 
     public void profileList() {
         List<Profile> profileList = profileRepository.getProfileList();
@@ -37,7 +36,4 @@ public class ProfileService {
         }
     }
 
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
-    }
 }

@@ -5,10 +5,14 @@ package org.example.controller;
 import org.example.dto.Profile;
 import org.example.service.CardService;
 import org.example.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
+@Controller
 
 public class ProfileController {
+    @Autowired
     private CardService cardService ;
 
     public void start() {
@@ -118,10 +122,6 @@ public class ProfileController {
 
     private void payment() {
 
-    }
-
-    public void setCardService(CardService cardService) {
-        this.cardService = cardService;
     }
 
 

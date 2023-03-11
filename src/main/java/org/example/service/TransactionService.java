@@ -4,14 +4,14 @@ package org.example.service;
 import org.example.dto.Transaction;
 import org.example.enums.TransactionType;
 import org.example.repository.TransactionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-@Component
+@Service
 public class TransactionService {
-    public TransactionService() {
-    }
-
+    @Autowired
     private TransactionRepository transactionRepository;
     public void createTransaction(Integer cardId, Integer terminalId, Double amount, TransactionType type) {
         Transaction transaction = new Transaction();

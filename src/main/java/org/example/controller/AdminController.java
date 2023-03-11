@@ -10,19 +10,25 @@ import org.example.service.CardService;
 import org.example.service.ProfileService;
 import org.example.service.TerminalService;
 import org.example.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
-@Component
+@Controller
 public class AdminController {
-    //    private CardService cardService = new CardService();
+    @Autowired
     private ProfileService profileService ;
+    @Autowired
     private TerminalService terminalService ;
+    @Autowired
     private CardService cardService;
+    @Autowired
     private TransactionRepository transactionRepository ;
+    @Autowired
     private CardRepository  cardRepository ;
 
     public AdminController() {

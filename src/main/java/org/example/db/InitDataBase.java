@@ -8,13 +8,16 @@ import org.example.enums.ProfileRole;
 import org.example.repository.CardRepository;
 import org.example.repository.ProfileRepository;
 import org.example.util.MD5Util;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
+@Component
 public class InitDataBase {
-
+@Autowired
 private  ProfileRepository profileRepository ;
+    @Autowired
 private  CardRepository cardRepository ;
 
     public InitDataBase() {

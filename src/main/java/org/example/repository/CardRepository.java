@@ -5,13 +5,14 @@ import org.example.db.DataBase;
 import org.example.dto.Card;
 import org.example.enums.GeneralStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
-@Component
+@Repository
 public class CardRepository {
 
     public int save(Card card) {
